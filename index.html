@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href='https://fonts.googleapis.com/css?family=Rampart One' rel='stylesheet'>
+        <style id="fondo">
+            body{
+			font-family: Arial;
+            background-position: top center;
+            background-repeat:no-repeat;
+            background-size: cover;
+		}
+		.btn{
+			display: inline-block;
+			padding: 20px 15px;
+			text-decoration: none;
+			text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+			box-shadow: 0 1px 1px rgba(0,0,0,0.3); 
+		}
+
+		.btn-green{
+			color: rgb(255, 255, 255);
+			background-color: #1b791d;
+		}
+		.btn-green:hover{
+			background-color: #186d1a;	
+		}
+		.btn-green:active{
+			background-color: #185819;
+		}
+
+		.btn-red{
+			color: rgb(255, 255, 255);
+			background-color: #900a0a;
+		}
+		.btn-red:hover{
+			background-color: #800808;	
+		}
+		.btn-red:active{
+			background-color: #690808;
+		}
+        </style>
+        <style>
+            body {
+            font-family: 'Rampart One';font-size: 22px;
+            }
+        </style>
+        <title>Perros</title>
+        <link rel="shortcut icon" href="icon.png">
+    </head>
+    <body>
+        <script>
+            var sonido = new Audio();
+            sonido.src="YEY.mp3";
+            sonido.src="YEY.ogg";
+            var sonidos = new Audio();
+            sonidos.src="oh.mp3";
+            sonidos.src="oh.ogg";
+        </script>
+        <h1>Perro triste o perro alegre</h1>
+        <p>:D</p>
+        <img id="miImagen" src="Perro alegre.jpg">
+        <div id="main-container">
+            <a class="btn btn-green" onclick="cambioContento()" class="contact100-form-btn" onmousedown="sonido.play()">Perro alegre</a>
+        </div>
+        <div id="main-container">
+            <a class="btn btn-red" onclick="cambioTriste()" class="contact100-form-btn" onmousedown="sonidos.play()">Perro triste</a>
+        </div>
+    </body>
+    <script>
+        function cambioContento() {
+            document.getElementById('miImagen').src='Perro alegre.jpg';
+                        
+            var fondo = document.getElementsByTagName('body')[0];
+            fondo.style.backgroundImage = 'url(./fondo2.jpg)';
+            
+            fondo.style.backgroundSize = 'cover';
+            fondo.style.backgroundPosition =  'top center';
+            
+        }
+        function cambioTriste() {
+            document.getElementById('miImagen').src='Perro triste.jpg';
+            var fondo = document.getElementsByTagName('body')[0];
+            fondo.style.backgroundImage = 'url(./fondo.png)';
+            fondo.style.backgroundSize = 'inherit';
+            fondo.style.backgroundPosition =  'center center';
+        }
+    </script>
+</html>
